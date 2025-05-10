@@ -34,7 +34,7 @@ Ensure you have the following installed:
    ```
 3. Install dependencies
    ```sh
-   npm install express
+   npm init -y
    ```
    ```sh
    npm install express
