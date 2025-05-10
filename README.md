@@ -26,7 +26,7 @@ Ensure you have the following installed:
 ### Installation
 1. Clone the repository
    ```sh
-   git clone https://github.com/caro122/adoptapaw.git
+   git clone https://github.com/caro122/Adoption-Website.git
    ```
 2. Navigate to the project directory
    ```sh
