@@ -30,7 +30,7 @@ Ensure you have the following installed:
    ```
 2. Navigate to the project directory
    ```sh
-   cd adoptapaw
+   cd homepage.html
    ```
 3. Start the server
    ```sh
