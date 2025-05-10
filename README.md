@@ -32,11 +32,19 @@ Ensure you have the following installed:
    ```sh
    cd homepage.html
    ```
-3. Start the server
+3. Install dependencies
+   ```sh
+   npm install express
+   ```
+   ```sh
+   npm install express
+   ```
+
+4. Start the server
    ```sh
    node new.js
    ```
-4. Open your browser and go to:
+5. Open your browser and go to:
    ```sh
    http://localhost:3004
    ```
