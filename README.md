@@ -25,14 +25,18 @@ Ensure you have the following installed:
 
 ### Installation
 1. Clone the repository
-   ``` git clone https://github.com/caro122/adoptapaw.git
-
+   ```sh
+   git clone https://github.com/caro122/adoptapaw.git
+   ```
 2. Navigate to the project directory
-   ``` cd adoptapaw
-
+   ```sh
+   cd adoptapaw
+   ```
 3. Start the server
-   ``` node new.js
-
+   ```sh
+   node new.js
+   ```
 4. Open your browser and go to:
-   ``` http://localhost:3004
-
+   ```sh
+   http://localhost:3004
+   ```
