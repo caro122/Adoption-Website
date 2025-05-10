@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Have a pet to give away</title>
+  <link rel="stylesheet" href="styling.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    #compliment {
+      width: 400px;  
+      height: 70px;  
+      font-size: 12px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px;
+      line-height: 1;
+      max-width: 300px;  
+      max-height: 200px;
+      resize: both;   
+    }
+  </style>
+</head>
+<body>
+<div class="grid-container">
+
+  <!--header-->
+  <div class="item2">
+    <ul>
+      <li><a href="Homepage.html">Home Page</a></li>
+      <li><a href="FindPet.html">Find a dog/cat</a></li>
+      <li><a href="DogCare.html">Dog Care</a></li>
+      <li><a href="CatCare.html">Cat Care</a></li>
+      <li><a href="PetAway.html">Pet to give</a></li>
+      <li><a href="ContactUs.html">Contact Us</a></li>
+      <li><a href="account.html">Create an account</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="item3">
+
+    
+    <div id="login-section">
+      <h2>Please log in to continue</h2>
+      
+      <form id="loginForm">
+        <p><label for="login-username">Username:</label></p>
+        <input type="text" id="login-username" required><br><br>
+        <p><label for="login-password">Password:</label></p>
+        <input type="password" id="login-password" required><br><br>
+        <button type="submit">Login</button>
+        <div id="login-error" style="color:darkorchid; font-weight:bold;"></div>
+      </form>
+    </div>
+
+    
+    <form id="petawayForm" action="togive.html" style="display:none;">
+      <fieldset>
+        <legend>Have a pet to give away</legend>
+        
+        <label><input type="radio" name="Cat" value="cat"> Cat</label>
+        <label><input type="radio" name="Dog" value="dog"> Dog</label>
+        <br><br>
+
+        <label for="breed">Breed of cat/dog:</label>
+        <input type="text" id="breed" name="breed">
+        <label><input type="radio" name="dnm" value="mixed"> Mixed breed</label>
+        <br><br>
+
+        <label for="age">Age of animal</label>
+        <select id="age" name="age">
+          <option value="">Choose an option</option>
+          <option value="1-12">1-12 months</option>
+          <option value="1-6">1-6 years</option>
+          <option value="7-10">7-10 years</option>
+          <option value="10+">10+ years</option>
+        </select>
+        <br><br>
+
+        <p>Gender:</p>
+        <label><input type="radio" name="Gender" value="female"> Female</label>
+        <label><input type="radio" name="Gender" value="male"> Male</label>
+        <br><br>
+
+        <p>Gets along with:</p>
+        <label><input type="checkbox" name="otherdog" value="dogs"> Other dogs</label>
+        <label><input type="checkbox" name="othercat" value="cats"> Other cats</label>
+        <label><input type="checkbox" name="child" value="children"> Small children</label>
+        <label><input type="checkbox" name="none" value="none"> None</label>
+        <br><br>
+
+        <label for="compliment">Give further information about your pet:</label><br>
+        <textarea id="compliment" name="compliment"></textarea>
+        <br><br>
+
+        <label for="fname">Your first name: </label>
+        <input type="text" id="fname" name="fname"><br><br>
+
+        <label for="lname">Your family name: </label>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <label for="email">Your email: </label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+      </fieldset>
+    </form>
+
+  </div>
+</div>
+<!--footer-->
+<script>
+  document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+  
+    const username = document.getElementById("login-username").value.trim();
+    const password = document.getElementById("login-password").value.trim();
+    const errorBox = document.getElementById("login-error");
+  
+    const usernameRegex = /^[a-zA-Z0-9]+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
+  
+    if (!usernameRegex.test(username)) {
+      errorBox.textContent = "Wrong log in infos";
+      return;
+    }
+  
+    if (!passwordRegex.test(password)) {
+      errorBox.textContent = "Wrong log in infos";
+      return;
+    }
+  
+    const response = await fetch('/verifyLogin', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+    });
+  
+    const result = await response.text();
+    if (result === "success") {
+      document.getElementById("login-section").style.display = "none";
+      document.getElementById("petawayForm").style.display = "block";
+    } else {
+      errorBox.textContent = "Wrong log in infos";
+    }
+  });
+  </script>
+  
+
+</body>
+</html>

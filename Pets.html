@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browse Available Pets</title>
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+      .pet {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    width: fit-content;
+      }
+
+      .pet > img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+      }
+
+      .interested{
+        border: solid lightblue;
+        border-radius: 10px;
+        background-color: paleturquoise;
+        padding: 1px 30px;
+
+      }
+
+      .pet{
+        width: 400px;;
+      }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+
+     <!--header-->
+
+  <div class="item2">
+    <ul>
+      <li><a href="Homepage.html">Home Page</a></li>
+      
+      <li><a href="FindPet.html">Find a dog/cat</a></li>
+      <li><a href="DogCare.html">Dog Care</a></li>
+      <li><a href="CatCare.html">Cat Care</a></li>
+      <li><a href="PetAway.html">Pet to give</a></li>
+      <li><a href="ContactUs.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="item3">
+     <h1>Browse Available Pets</h1>
+     <fieldset class="pet" >
+      <legend style="font-size: 20px; font-weight: bold;">Winnie</legend>
+      
+      <img src="sausagedog.jpg" 
+            alt="image of a sausage dog">
+      
+      <p><b>Type: </b> Dog
+    <br>
+      <b>Breed: </b> Dachshund
+      <br>
+      <b>Age: </b>6 months <br>
+      <b>Gender: </b>male<br>
+      <b>Gets along with: </b>everything<br><br>
+      <a class="interested" href="Pets.html">Interested</a>
+    </p> 
+    
+     </fieldset>
+     <br>
+
+     <fieldset class="pet" >
+      <legend style="font-size: 20px; font-weight: bold;">Oscar</legend>
+      <img src="catbrow.png"
+            alt="image of a cat">
+      <p><b>Type: </b> Cat
+    <br>
+      <b>Breed: </b> Shorthair
+      <br>
+      <b>Age: </b>2 years old<br>
+      <b>Gender: </b>Male<br>
+      <b>Gets along with: </b>Cats<br><br>
+      <a class="interested" href="Pets.html">Interested</a>
+    </p> 
+    
+     </fieldset>
+
+     <br>
+
+     <fieldset class="pet" >
+      <legend style="font-size: 20px; font-weight: bold;">Pibble</legend>
+      <img src="pug1.webp" 
+            alt="image of a pug">
+      <p><b>Type: </b> Dog
+    <br>
+      <b>Breed: </b> Pug
+      <br>
+      <b>Age: </b>8 years old<br>
+      <b>Gender: </b>Male<br>
+      <b>Gets along with: </b>Dogs<br><br>
+      <a class="interested" href="Pets.html">Interested</a>
+    </p> 
+    
+     </fieldset>
+      
+     
+    
+</div>
+
+ 
+
+  <!--footer-->
+
+</div>
+<script src="function.js"></script>
+
+
+</body>
+</html>

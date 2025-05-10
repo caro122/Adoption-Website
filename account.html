@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create an account</title>
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+  <div class="grid-container">
+
+  <!--header-->
+
+  <div class="item2">
+    <ul>
+      <li><a href="Homepage.html">Home Page</a></li>
+      
+      <li><a href="FindPet.html">Find a dog/cat</a></li>
+      <li><a href="DogCare.html">Dog Care</a></li>
+      <li><a href="CatCare.html">Cat Care</a></li>
+      <li><a href="PetAway.html">Pet to give</a></li>
+      <li><a href="ContactUs.html">Contact Us</a></li>
+      <li><a href="account.html">Create an account</a></li>
+    </ul>
+  </div>
+
+  <div class="item3">
+    <h2>Create an Account</h2>
+    <form action="/processAccount" method="POST" onsubmit="return validateForm()">
+        <p><label for="username">Username:</label></p>
+        <p><input type="text" id="username" name="username"></p>
+        <p><label for="password">Password:</label></p>
+        <p><input type="password" id="password" name="password"></p>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="error-msg" style="color: darkorchid; font-weight: bold;"></div>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorDiv = document.getElementById('error-msg');
+        
+            const usernameRegex = /^[a-zA-Z0-9]+$/;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/;
+        
+            if (!usernameRegex.test(username)) {
+                errorDiv.textContent = "Username must contain only letters and digits.";
+                return false;
+            }
+        
+            if (!passwordRegex.test(password)) {
+                errorDiv.textContent = "Password must be at least 4 characters, with at least 1 letter and 1 digit.";
+                return false;
+            }
+        
+            return true;
+        }
+        </script>
+
+  </div>
+
+
+ <!--footer-->
+
+</div>
+<script src="function.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find a Dog or Cat</title>
+    <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+
+    <!--header-->
+
+    <div class="item2">
+        <ul>
+            <li><a href="Homepage.html">Home Page</a></li>
+            <li><a href="FindPet.html">Find a dog/cat</a></li>
+            <li><a href="DogCare.html">Dog Care</a></li>
+            <li><a href="CatCare.html">Cat Care</a></li>
+            <li><a href="PetAway.html">Pet to give</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+            <li><a href="account.html">Create an account</a></li>
+        </ul>
+    </div>
+
+    <div class="item3">
+
+        <form class="findpet" action="/findPet" method="POST">
+            <fieldset id="f1">
+                <legend>Find a dog/cat</legend>
+
+                <label><input type="radio" name="Cat" value="cat"> Cat</label>
+                <label><input type="radio" name="Cat" value="dog"> Dog</label>
+                <br><br>
+
+                <label for="breed">Breed of cat/dog:</label>
+                <input type="text" id="breed" name="breed">
+                <label><input type="radio" name="dnm" value="breed"> Doesn't matter</label>
+                <br><br>
+
+                <label for="age">Preferred age of animal</label>
+                <select id="age" name="age">
+                    <option value="">Choose an option</option>
+                    <option value="1-12">1-12 months</option>
+                    <option value="1-6">1-6 years</option>
+                    <option value="7-10">7-10 years</option>
+                    <option value="10+">10+ years</option>
+                    <option value="any">Doesn't matter</option>
+                </select>
+                <br><br>
+
+                <p>Gender:</p>
+                <label><input type="radio" name="Gender" value="female"> Female</label>
+                <label><input type="radio" name="Gender" value="male"> Male</label>
+                <label><input type="radio" name="Gender" value="any"> Doesn't matter</label>
+                <br><br>
+
+                <p>Need to get along with: (Pick as many as apply)</p>
+                <label><input type="checkbox" name="getsAlong" value="dogs"> Other dogs</label>
+                <label><input type="checkbox" name="getsAlong" value="cats"> Other cats</label>
+                <label><input type="checkbox" name="getsAlong" value="children"> Small children</label>
+                <label><input type="checkbox" name="getsAlong" value="none"> None</label>
+                <br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Clear">
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!--footer-->
+
+    </div>
+
+    <script src="function.js"></script>
+</body>
+</html>
